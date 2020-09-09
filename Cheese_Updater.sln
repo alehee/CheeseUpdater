@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cheese_Updater", "Cheese_Updater.csproj", "{70B89B15-01DC-426E-8809-0C12A1020B92}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70B89B15-01DC-426E-8809-0C12A1020B92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70B89B15-01DC-426E-8809-0C12A1020B92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70B89B15-01DC-426E-8809-0C12A1020B92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70B89B15-01DC-426E-8809-0C12A1020B92}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1F53F5CF-A4FD-4A1F-BB3D-0F43E188E5FE}
+	EndGlobalSection
+EndGlobal
