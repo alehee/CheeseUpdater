@@ -10,14 +10,14 @@ namespace Cheese_Updater
 {
     public partial class Cheese_Updater : Form
     {
-        static string VERSION = "1.0.2";
+        static string VERSION = "1.0.3";
 
         // POŁĄCZENIE Z BAZĄ DANYCH
-        static string DATABASE_CONNECTION = "datasource=aleksanderheese.pl;port=3306;username=u986763087_ah;password=AleHeeAH$;database=u986763087_ah";
-        string sql = "SELECT Ver, URL FROM Version WHERE Program='TEST'";
+        static string DATABASE_CONNECTION = "datasource=urlexample.com;port=3306;username=user;password=pass;database=database";
+        string sql = "SELECT Ver, URL FROM Version WHERE Program='programName'";
 
         // ZMIEŃ NAZWĘ PROGRAMU
-        static string PROGRAM_NAME = "TEST";
+        static string PROGRAM_NAME = "programName";
         // ZMIEŃ ŚCIEŻKĘ DO ODPALENIA PROGRAMU PO ZAKOŃCZENIU
         static string PROGRAM_PATH = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
         // ZMIEŃ NAZWĘ PLIKU WYKONYWALNEGO PROGRAMU
@@ -63,7 +63,7 @@ namespace Cheese_Updater
 
         private void Cheese_Updater_Load(object sender, EventArgs e)
         {
-            this.L_Title.Text = "Poczekaj... Aktualizujemy dla Ciebie " + PROGRAM_NAME;
+            this.L_Title.Text = "Wait a second... We are updating " + PROGRAM_NAME;
 
             // STATUS 0 --- POŁĄCZENIE Z BAZĄ I POBRANIE DANYCH O LINKU DO ŚCIĄGNIĘCIA
             if (installState == 0)
@@ -89,7 +89,7 @@ namespace Cheese_Updater
                     else
                     {
                         this.L_Progress.Visible = false;
-                        this.L_Error.Text = "Błąd pobierania danych!";
+                        this.L_Error.Text = "Error: download unavailable!";
                         this.L_Error.Visible = true;
                         error = true;
                     }
@@ -97,7 +97,7 @@ namespace Cheese_Updater
                 catch
                 {
                     this.L_Progress.Visible = false;
-                    this.L_Error.Text = "Błąd połączenia z bazą danych!";
+                    this.L_Error.Text = "Error: database connection error!";
                     this.L_Error.Visible = true;
                     error = true;
                 }
@@ -127,7 +127,7 @@ namespace Cheese_Updater
                 catch
                 {
                     this.L_Progress.Visible = false;
-                    this.L_Error.Text = "Błąd tworzenia kopii zapasowej!";
+                    this.L_Error.Text = "Error: can not create backup file!";
                     this.L_Error.Visible = true;
                     error = true;
                 }
@@ -153,7 +153,7 @@ namespace Cheese_Updater
                 catch
                 {
                     this.L_Progress.Visible = false;
-                    this.L_Error.Text = "Błąd pobierania aktualizacji!";
+                    this.L_Error.Text = "Error: update download exception!";
                     this.L_Error.Visible = true;
                     error = true;
                 }
@@ -183,7 +183,7 @@ namespace Cheese_Updater
                 catch
                 {
                     this.L_Progress.Visible = false;
-                    this.L_Error.Text = "Błąd usuwania starych plików!";
+                    this.L_Error.Text = "Error: can not delete old files!";
                     this.L_Error.Visible = true;
                     error = true;
                 }
@@ -201,7 +201,7 @@ namespace Cheese_Updater
                 catch
                 {
                     this.L_Progress.Visible = false;
-                    this.L_Error.Text = "Błąd rozpakowania aktualizacji!";
+                    this.L_Error.Text = "Error: update unzip failed!";
                     this.L_Error.Visible = true;
                     error = true;
                 }
@@ -226,7 +226,7 @@ namespace Cheese_Updater
                 catch
                 {
                     this.L_Progress.Visible = false;
-                    this.L_Error.Text = "Błąd usuwania plików tymczasowych!";
+                    this.L_Error.Text = "Error: temporary files error!";
                     this.L_Error.Visible = true;
                     error = true;
                 }
@@ -239,7 +239,7 @@ namespace Cheese_Updater
                 {
                     installState = 7;
                     this.progressBar.Value = installState;
-                    this.L_Title.Text = "To już! " + PROGRAM_NAME + " zaktualizowany!";
+                    this.L_Title.Text = "Done! " + PROGRAM_NAME + " updated!";
                     this.B_Next.Visible = true;
 
                     Properties.Settings.Default["ProgramVersion"] = PROGRAM_DOWNLOAD_VERSION;
@@ -251,7 +251,7 @@ namespace Cheese_Updater
                 catch
                 {
                     this.L_Progress.Visible = false;
-                    this.L_Progress.Text = "Twój program jest gotowy!";
+                    this.L_Progress.Text = "Application is ready to launch!";
                     this.L_Progress.Visible = true;
                     error = true;
                 }
@@ -261,7 +261,7 @@ namespace Cheese_Updater
             if(versionGood == true)
             {
                 this.progressBar.Value = 7;
-                this.L_Title.Text = "Uruchamiam " + PROGRAM_NAME;
+                this.L_Title.Text = "Launching " + PROGRAM_NAME;
                 this.B_Next.Visible = true;
                 Process.Start(PROGRAM_TO_RUN_EXE);
                 Application.Exit();
@@ -272,8 +272,8 @@ namespace Cheese_Updater
         private void errorBackup()
         {
             error = true;
-            this.L_Title.Text = "Coś poszło nie tak!";
-            this.L_Progress.Text = "Przywracamy program do ostatniej wersji...";
+            this.L_Title.Text = "Something went wrong!";
+            this.L_Progress.Text = "Restoring to the last version...";
             this.progressBar.Value = 0;
             if (Directory.Exists(PROGRAM_PATH + "\\bin"))
             {

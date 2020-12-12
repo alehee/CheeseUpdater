@@ -53,7 +53,7 @@
             this.L_Title.Name = "L_Title";
             this.L_Title.Size = new System.Drawing.Size(437, 36);
             this.L_Title.TabIndex = 1;
-            this.L_Title.Text = "Poczekaj... Aktualizujemy dla Ciebie PROGRAM_NAME";
+            this.L_Title.Text = "Wait a second... We are updating PROGRAM_NAME";
             this.L_Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // L_Progress
@@ -63,7 +63,7 @@
             this.L_Progress.Name = "L_Progress";
             this.L_Progress.Size = new System.Drawing.Size(437, 23);
             this.L_Progress.TabIndex = 2;
-            this.L_Progress.Text = "Aktualizujemy...";
+            this.L_Progress.Text = "Updating...";
             this.L_Progress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // B_Next
@@ -76,7 +76,7 @@
             this.B_Next.Name = "B_Next";
             this.B_Next.Size = new System.Drawing.Size(92, 23);
             this.B_Next.TabIndex = 3;
-            this.B_Next.Text = "Zakończ";
+            this.B_Next.Text = "End";
             this.B_Next.UseVisualStyleBackColor = false;
             this.B_Next.Visible = false;
             this.B_Next.Click += new System.EventHandler(this.B_Next_Click);
@@ -91,7 +91,7 @@
             this.B_Cancel.Name = "B_Cancel";
             this.B_Cancel.Size = new System.Drawing.Size(92, 23);
             this.B_Cancel.TabIndex = 4;
-            this.B_Cancel.Text = "Anuluj";
+            this.B_Cancel.Text = "Cancel";
             this.B_Cancel.UseVisualStyleBackColor = false;
             this.B_Cancel.Visible = false;
             this.B_Cancel.Click += new System.EventHandler(this.B_Cancel_Click);
