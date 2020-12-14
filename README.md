@@ -12,7 +12,7 @@ Cheese Updater is a low budget launcher for windows programs. Everytime applicat
 * Clearing temporary files
 
 ## Used technology
-Technology I used in this project:
+Technology I used for this project:
 * C#
 * C# WinForms
 * MySQL with C# connector
